@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
 import { ScrollView, Text, TextInput, View } from 'react-native';
-import { styles } from './style.js';
+import { styles } from './styles.js';
 
 export default function Cadastro() {
     return (

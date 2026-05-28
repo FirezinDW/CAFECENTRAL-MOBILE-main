@@ -1,6 +1,6 @@
-import { View, Text, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import { Link } from 'expo-router';
-import { styles } from './style.js'
+import { ScrollView, Text, View } from 'react-native';
+
 
 export default function SL() {
     return (
@@ -19,7 +19,6 @@ export default function SL() {
             </View>
             {/*------------------------------------------------------------------------------------------------------*/}
             {/* CONTEÚDO */}
-
             {/* ITEM 1 */}
             <View>
                 <Text>🥖 Salgados e Lanches</Text>

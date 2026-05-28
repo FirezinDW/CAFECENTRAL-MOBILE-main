@@ -1,6 +1,6 @@
-import { View, Text, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import { Link } from 'expo-router';
-import { styles } from './style.js'
+import { ScrollView, Text, View } from 'react-native';
+import { styles } from './styles.js';
 
 export default function DS() {
     return (
@@ -29,7 +29,7 @@ export default function DS() {
                     <Text>Crocante por fora, macio por dentro, com o sabor inconfundível da manteiga. Perfeito para acompanhar seu café.</Text>
                     <Text> R$ 7,00 </Text>
                 </View>
-                {/*------------------------------------------------------------------------------------------------------*/}
+            {/*------------------------------------------------------------------------------------------------------*/}
                 {/* ITEM 2 */}
                 <View>
                     <Text>Torta de Maçã com Sorvete </Text>
@@ -37,7 +37,7 @@ export default function DS() {
                     <Text>Fatias de maçã caramelizada em uma massa crocante, servida quente com uma bola de sorvete de creme.</Text>
                     <Text> R$ 8,00 </Text>
                 </View>
-                {/*------------------------------------------------------------------------------------------------------*/}
+            {/*------------------------------------------------------------------------------------------------------*/}
                 {/* ITEM 3 */}
                 <View>
                     <Text>Brownie de Chocolate com Nozes </Text>
@@ -45,7 +45,7 @@ export default function DS() {
                     <Text>Intenso e úmido, com pedaços crocantes de nozes. Uma explosão de sabor a cada mordida.</Text>
                     <Text> R$ 7,00 </Text>
                 </View>
-                {/*------------------------------------------------------------------------------------------------------*/}
+            {/*------------------------------------------------------------------------------------------------------*/}
                 {/* ITEM 4 */}
                 <View>
                     <Text>Bolo Red Velvet </Text>

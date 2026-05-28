@@ -1,6 +1,6 @@
-import { View, Text, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import { Link } from 'expo-router';
-import { styles } from './style.js'
+import { ScrollView, Text, TextInput, View } from 'react-native';
+import { styles } from './styles.js';
 
 export default function Login() {
   return (
@@ -14,10 +14,9 @@ export default function Login() {
           <Link href='/'><Text style={styles.menuItem}>Início</Text></Link>
           <Link href='/sobre'><Text style={styles.menuItem}>Sobre</Text></Link>
           <Link href='/contato'><Text style={styles.menuItem}>Contato</Text></Link>
-          <Link href='/login'><Text style={[styles.menuItem, styles.ativo]}>Login</Text></Link>
         </View>
       </View>
-
+{/* ============================================================================================================ */}
       {/* Desenvolver Aqui */}
       <View style={styles.container}>
 
@@ -51,7 +50,7 @@ export default function Login() {
           </View>
         </View>
       </View>
-
+{/* ============================================================================================================ */}
       {/* RODAPÉ */}
       <View style={styles.rodape}>
         { /* Texto de direitos de autorais */}

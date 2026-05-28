@@ -1,13 +1,13 @@
-import { View, Text, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import { Link } from 'expo-router';
-import { styles } from './style.js'
+import { ScrollView, Text, View } from 'react-native';
+import { styles } from './styles.js';
 
 export default function CE() {
     return (
         <ScrollView>
             <View>
                 {/* TOPO (HEADER) */}
-                
+
                 <Text>Cafés Especiais - Café Central</Text>
                 <View>
                     <Link href='/'><Text style={styles.menuItem}> Início </Text></Link>

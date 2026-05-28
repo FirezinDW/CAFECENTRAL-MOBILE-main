@@ -1,4 +1,6 @@
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native'; // Importa os componentes View e Text do React Native
+import { Link } from 'expo-router';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native'; // Importa os componentes View e Text do React Native
+import { styles } from './styles.js';
 
 /* Versão Normal
 export default function Index() { // Define e exporta o componente principal da tela
@@ -30,19 +32,22 @@ export default function Sobre() {
     <ScrollView>
       {/* TOPO - HEADER*/}
       <View style={styles.header}>
-        <View style={styles.topo}>
-          <Image href='/'></Image>
+        <View style={styles.headerLogo}>
+        </View>
       </View>
-       <View style={styles.heroIndex}>
-          <Link href='/'><Text style={styles.menuItem}>Início</Text></Link>
-          <Link href='/sobre'><Text style={[styles.menuItem, styles.ativo]}>Sobre</Text></Link>
-          <Link href='/contato'><Text style={styles.menuItem}>Contato</Text></Link>
-          <Link href='/login'><Text style={styles.menuItem}>Login</Text></Link>
-      </View>
-      </View>
-{/* ============================================================================================================ */}
+        {/* ============================================================================================================ */}
+        {/* Desenvolver Aqui */}
+        <View style={styles.hero}>
+          <View style={styles.heroIndex}>
+            <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>
+            <Link href='/sobre'><TouchableOpacity style={[styles.menuItem , styles.ativo]}>Sobre</TouchableOpacity></Link>
+            <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
+          </View>
+        </View>
+      {/* ============================================================================================================ */}
+
       {/* Desenvolver Aqui */}
-      <View style={styles.hero}>
+      <View style={styles.heroConteudo}>
         <View style={styles.heroSobre}>
           <Text style={styles.h1}>Nossa História</Text>
           <Text style={styles.textoSobre1}>No Café Central, transformamos grãos selecionados em experiências memoráveis.
@@ -51,16 +56,12 @@ export default function Sobre() {
           <Text style={styles.textoSobre2}>Seja para uma pausa relaxante em nosso espaço ou para levar o melhor sabor com você,
             nosso compromisso é com a qualidade e o acolhimento.
             Venha nos visitar e descubra por que somos o ponto de encontro favorito da cidade.</Text>
-        </View>
+          </View>
       </View>
-{/* ============================================================================================================ */}
+      {/* ============================================================================================================ */}
       {/* RODAPÉ */}
-      { /* Texto de direitos de autorais */}
       <View style={styles.rodape}>
-        { /* Texto de direitos de autorais */}
         <Text style={styles.textoRodape}> 2026 Café Central. Todos os direitos reservados.</Text>
-
-        { /* Links de Contato */}
         <Link href='/contato'>
           <Text style={styles.linkRodape}>Entre em contato</Text>
         </Link>

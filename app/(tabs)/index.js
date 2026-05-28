@@ -1,25 +1,22 @@
 import { Link } from 'expo-router';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { styles } from './style.js';
+import { styles } from './styles.js';
 
 export default function Index() {
   return (
     <ScrollView  >
       {/* TOPO - HEADER*/}
       <View style={styles.header}>
-          <View style={styles.headerLogo}>
-            
-          </View>
-
+        <View style={styles.headerLogo}>
         </View>
+      </View>
         {/* ============================================================================================================ */}
         {/* Desenvolver Aqui */}
         <View style={styles.hero}>
           <View style={styles.heroIndex}>
-            <Link href='/'><TouchableOpacity style={[styles.menuItem, styles.ativo]}> Início </TouchableOpacity></Link>
-            <Link href='/sobre'><TouchableOpacity style={styles.menuItem}> Sobre </TouchableOpacity></Link>
-            <Link href='/login'><TouchableOpacity style={styles.menuItem}>Login</TouchableOpacity></Link>
-
+            <Link href='/'><TouchableOpacity style={[styles.menuItem, styles.ativo]}>Início</TouchableOpacity></Link>
+            <Link href='/sobre'><TouchableOpacity style={styles.menuItem}> Sobre</TouchableOpacity></Link>
+            <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
           </View>
           {/* ============================================================================================================ */}
 
