@@ -19,7 +19,7 @@ export default function SL() {
             </View>
             {/*------------------------------------------------------------------------------------------------------*/}
             {/* CONTEÚDO */}
-            {/* ITEM 1 */}
+            {/* ITEM 5 */}
             <View>
                 <Text>🥖 Salgados e Lanches</Text>
                 <View>
@@ -29,7 +29,7 @@ export default function SL() {
                     <Text>R$ 6,00</Text>
                 </View>
                 {/*------------------------------------------------------------------------------------------------------*/}
-                {/* ITEM 2 */}
+                {/* ITEM 6 */}
                 <View>
                     <Text>Sanduíche de Queijo Quente</Text>
 
@@ -38,7 +38,7 @@ export default function SL() {
                     <Text>R$ 8,00</Text>
                 </View>
                 {/*------------------------------------------------------------------------------------------------------*/}
-                {/* ITEM 3 */}
+                {/* ITEM 7 */}
                 <View>
                     <Text>Quiche Lorraine</Text>
 
@@ -46,7 +46,7 @@ export default function SL() {
                     <Text>R$ 5,00</Text>
                 </View>
                 {/*------------------------------------------------------------------------------------------------------*/}
-                {/* ITEM 4 */}
+                {/* ITEM 8 */}
                 <View>
                     <Text>Baguete Recheada</Text>
 

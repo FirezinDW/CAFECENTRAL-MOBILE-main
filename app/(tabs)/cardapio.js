@@ -7,6 +7,42 @@ export default function Cardapio() {
   const produtos = [
     {
       id: '1',
+      titulo: 'Espresso',
+      img: '',
+      url: '/produto1',
+      descricao: 'Um shot concentrado e aromático do nosso blend especial, com crema perfeita. Ideal para os amantes do café puro.',
+      pc: 'R$ 3,00',
+    },
+
+    {
+      id: '2',
+      titulo: 'Cappuccino Clássico',
+      img: '',
+      url: '/produto1',
+      descricao: 'Uma bebida encorpada, com sabor equilibrado, sem chocolate e servida com um toque de canela por cima, oferecendo textura aveludada e aroma intenso.',
+      pc: 'R$ 8,00',
+    },
+
+    {
+      id: '3',
+      titulo: 'Latte Macchiato',
+      img: '',
+      url: '/produto1',
+      descricao: 'Leite vaporizado delicadamente manchado com um shot de espresso, criando camadas visíveis e um sabor suave e cremoso.',
+      pc: 'R$ 8,00',
+    },
+
+    {
+      id: '4',
+      titulo: 'Mocha',
+      img: '',
+      url: '/produto1',
+      descricao: 'Uma deliciosa combinação de espresso, chocolate premium, leite vaporizado e chantilly, para um toque de indulgência.',
+      pc: 'R$ 7,00',
+    },
+
+    {
+      id: '5',
       titulo: 'Pão de Queijo Artesanal',
       img: '',
       url: '/produto1',
@@ -15,40 +51,67 @@ export default function Cardapio() {
     },
 
     {
-      id: '1',
-      titulo: 'Pão de Queijo Artesanal',
+      id: '6',
+      titulo: 'Sanduíche de Queijo Quente',
       img: '',
       url: '/produto1',
-      descricao: 'Delicioso pão de queijo artesanal, feito com leite e queijo fresco. O sabor autêntico que encanta todos os paladares.',
-      pc: 'R$ 6,00',
+      descricao: 'Pão de forma tostado com queijo mussarela derretido. Simples e delicioso.',
+      pc: 'R$ 8,00',
     },
 
     {
-      id: '1',
-      titulo: 'Pão de Queijo Artesanal',
+      id: '7',
+      titulo: 'Quiche Lorraine',
       img: '',
       url: '/produto1',
-      descricao: 'Delicioso pão de queijo artesanal, feito com leite e queijo fresco. O sabor autêntico que encanta todos os paladares.',
-      pc: 'R$ 6,00',
+      descricao: 'Uma torta salgada clássica francesa, com recheio cremoso de bacon e queijo. Servida com uma pequena salada verde.',
+      pc: 'R$ 5,00',
     },
 
     {
-      id: '1',
-      titulo: 'Pão de Queijo Artesanal',
+      id: '8',
+      titulo: 'Baguete Recheada',
       img: '',
       url: '/produto1',
-      descricao: 'Delicioso pão de queijo artesanal, feito com leite e queijo fresco. O sabor autêntico que encanta todos os paladares.',
-      pc: 'R$ 6,00',
+      descricao: 'Baguete crocante recheada com presunto, queijo e tomate fresco. Ideal para um lanche rápido e saboroso.',
+      pc: 'R$ 9,00',
     },
 
     {
-      id: '1',
-      titulo: 'Pão de Queijo Artesanal',
+      id: '9',
+      titulo: 'Croissant Amanteigado ',
       img: '',
       url: '/produto1',
-      descricao: 'Delicioso pão de queijo artesanal, feito com leite e queijo fresco. O sabor autêntico que encanta todos os paladares.',
-      pc: 'R$ 6,00',
+      descricao: 'Crocante por fora, macio por dentro, com o sabor inconfundível da manteiga. Perfeito para acompanhar seu café.',
+      pc: 'R$ 7,00',
     },
+
+    {
+      id: '10',
+      titulo: 'Torta de Maçã com Sorvete',
+      img: '',
+      url: '/produto1',
+      descricao: 'Fatias de maçã caramelizada em uma massa crocante, servida quente com uma bola de sorvete de creme.',
+      pc: 'R$ 8,00',
+    }, 
+
+    {
+      id: '11',
+      titulo: 'Brownie de Chocolate com Nozes',
+      img: '',
+      url: '/produto1',
+      descricao: 'Intenso e úmido, com pedaços crocantes de nozes. Uma explosão de sabor a cada mordida.',
+      pc: 'R$ 7,00',
+    }, 
+
+    {
+      id: '12',
+      titulo: 'Bolo Red Velvet',
+      img: '',
+      url: '/produto1',
+      descricao: 'Um clássico americano, com camadas de bolo aveludado de chocolate e um cremoso recheio de cream cheese.',
+      pc: 'R$ 9,00',
+    }, 
   ]
 
 
@@ -73,7 +136,6 @@ export default function Cardapio() {
         <View style={styles.heroIndex}>
           <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>
           <Link href='/sobre'><TouchableOpacity style={styles.menuItem}>Sobre</TouchableOpacity></Link>
-          <Link href='/cardapio'><TouchableOpacity style={[styles.menuItem, styles.ativo]}>Cardápio</TouchableOpacity></Link>
           <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
         </View>
       </View>
@@ -105,7 +167,7 @@ export default function Cardapio() {
                 {item.descricao}
               </Text>
 
-              <Text>
+              <Text style={styles.Produtopreco}>
                 Preco: R${item.pc}
               </Text>
               <Link style={styles.cursoBtnLink} href={{

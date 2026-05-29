@@ -20,7 +20,7 @@ export default function DS() {
             {/*------------------------------------------------------------------------------------------------------*/}
             {/* CONTEÚDO */}
 
-            {/* ITEM 1 */}
+            {/* ITEM 9 */}
             <View>
                 <Text>🧁 Doces e Sobremesas</Text>
                 <View>
@@ -30,7 +30,7 @@ export default function DS() {
                     <Text> R$ 7,00 </Text>
                 </View>
             {/*------------------------------------------------------------------------------------------------------*/}
-                {/* ITEM 2 */}
+                {/* ITEM 10 */}
                 <View>
                     <Text>Torta de Maçã com Sorvete </Text>
 
@@ -38,7 +38,7 @@ export default function DS() {
                     <Text> R$ 8,00 </Text>
                 </View>
             {/*------------------------------------------------------------------------------------------------------*/}
-                {/* ITEM 3 */}
+                {/* ITEM 11 */}
                 <View>
                     <Text>Brownie de Chocolate com Nozes </Text>
 
@@ -46,7 +46,7 @@ export default function DS() {
                     <Text> R$ 7,00 </Text>
                 </View>
             {/*------------------------------------------------------------------------------------------------------*/}
-                {/* ITEM 4 */}
+                {/* ITEM 12 */}
                 <View>
                     <Text>Bolo Red Velvet </Text>
 
