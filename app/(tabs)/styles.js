@@ -25,10 +25,9 @@ export const styles = StyleSheet.create({
         backgroundColor: '#dbd5d5',
         padding: 15,
         fontSize: 15,
-        alignSelf: 'center',
+        alignItems: 'center',
         borderRadius: 8,
         margin: 10,
-        textDecorationLine: 'none',
         shadowColor: '#000000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
@@ -164,6 +163,20 @@ export const styles = StyleSheet.create({
         padding: 20,
     },
 
+    containerC: {
+        backgroundColor: '#745739',
+        flexdiretion: 'column',
+        alignItems: 'center',
+        padding: 20,
+    },
+
+    containerL: {
+        backgroundColor: '#745739',
+        flexdiretion: 'column',
+        alignItems: 'center',
+        padding: 20,
+    },
+
     heroContato: {
         flex: 1,
         backgroundColor: '#745739',
@@ -218,8 +231,9 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 8,
+        borderColor: '#8f8b8b',
         padding: 12,
-        marginBottom: 10,
+        marginBottom: 15,
         fontSize: 16,
     },
 
@@ -236,6 +250,48 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
     },
+
+    linkAuth: {
+        color: '#ccc',
+        fontSize: 15,
+        fontWeight: 'bold',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#e4ad76',
+        padding: 10,
+        borderWidth: 1,
+        borderColor: '#e4ad76',
+        borderRadius: 5,
+    },
+
+    linkAuthDestaque: {
+        color: '#0066cc',
+        textDecorationLine: 'underline',
+    },
+    textoAuth: {
+        color: '#745739',
+        fontSize: 15,
+        marginBottom: 20,
+        textAlign: 'center',
+    },
+
+    menuItemC: {
+        color: '#000000',
+        backgroundColor: '#dbd5d5',
+        padding: 15,
+        fontSize: 15,
+        alignSelf: 'center',
+        borderRadius: 8,
+        margin: 10,
+        textDecorationLine: 'none',
+        shadowColor: '#000000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.5,
+        shadowRadius: 10,
+        elevation: 5,
+        gap: 10,
+    },
+
 
     // =======================================================================================================
     /* ================= CARDÁPIO ================= */
@@ -268,6 +324,26 @@ export const styles = StyleSheet.create({
 
 
 
+    /* ================= CADASTRO ================= */
+
+
+
+    /* ================= DETALHES ================= */
+
+
+
+    /* ================= CE ================= */
+
+
+
+    /* ================= DS ================= */
+
+
+
+    /* ================= SL ================= */
+
+
+
     //*================================================================================================================================ */
     //================= RODAPÉ ================= 
 
@@ -292,5 +368,6 @@ export const styles = StyleSheet.create({
         fontSize: 15,
     },
 
-});
+    }
+);  
 //*================================================================================================================================ */

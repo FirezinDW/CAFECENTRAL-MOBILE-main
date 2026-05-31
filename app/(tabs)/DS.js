@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles.js';
 
 export default function DS() {
@@ -10,11 +10,11 @@ export default function DS() {
 
                 <Text> 🍰 Doces e Sobremesas - CafeCentral </Text>
                 <View>
-                    <Link href='/'><Text style={styles.menuItem}> Início </Text></Link>
-                    <Link href='/sobre'><Text style={styles.menuItem}> Sobre </Text></Link>
-                    <Link href='/cardapio'><Text style={[styles.menuItem, styles.ativo]}> Cardápio </Text></Link>
-                    <Link href='/contato'><Text style={styles.menuItem}> Contato </Text></Link>
-                    <Link href='/login'><Text style={styles.menuItem}>Login</Text></Link>
+                    <Link href='/'><TouchableOpacity style={styles.menuItem}> Início </TouchableOpacity></Link>
+                    <Link href='/sobre'><TouchableOpacity style={styles.menuItem}> Sobre </TouchableOpacity></Link>
+                    <Link href='/cardapio'><TouchableOpacity style={[styles.menuItem, styles.ativo]}> Cardápio </TouchableOpacity></Link>
+                    <Link href='/contato'><TouchableOpacity style={styles.menuItem}> Contato </TouchableOpacity></Link>
+                    <Link href='/login'><TouchableOpacity style={styles.menuItem}>Login</TouchableOpacity></Link>
                 </View>
             </View>
             {/*------------------------------------------------------------------------------------------------------*/}

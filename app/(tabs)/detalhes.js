@@ -1,76 +1,79 @@
 import {
-    View, // Para agrupar elementos (= div)
-    Text, // Para exibir textos (= p, h1...)
-    TouchableOpacity, // Para botões clicáveis (= button)
-    ScrollView, // Para a área principal com scroll,
-    StyleSheet, // Para aplicar estilo na página,
-    Image,
-    FlatList,
-    TextInput
-} from 'react-native'; // Importa os componentes View e Text
-import { useState } from 'react';
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView
+} from 'react-native';
 import { Link, useLocalSearchParams } from 'expo-router';
+import { styles } from './styles';
 
 export default function Detalhes() {
 
-    const {
-        titulo,
-        img,
-        descricao,
-        pc
-    } = useLocalSearchParams();
+  const {
+    Produtotitulo,
+    Produtotimgem,
+    Produtodescricao,
+    Produtopc
+  } = useLocalSearchParams();
 
-    return (
-        <ScrollView>
-            {/* TOPO - HEADER*/}
-            <View style={styles.header}>
-                <View style={styles.headerLogo}>
-                </View>
-            </View>
-            {/* ============================================================================================================ */}
-            {/* Desenvolver Aqui */}
-            <View style={styles.hero}>
-                <View style={styles.heroIndex}>
-                    <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>
-                    <Link href='/sobre'><TouchableOpacity style={styles.menuItem}>Sobre</TouchableOpacity></Link>
-                    <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
-                </View>
-            </View>
-            <View>
-                <Text style={styles.etiqueta}>
-                    Detalhes do Produto
-                </Text>
+  return (
+    <ScrollView>
 
-                <Text style={styles.Produtotitulo}>
-                    {titulo}
-                </Text>
+      {/* HEADER */}
+      <View style={styles.header}>
+        <View style={styles.headerLogo} />
+      </View>
 
-                <Text style={styles.Produtodescricao}>
-                    {descricao}
-                </Text>
+      {/* MENU */}
+      <View style={styles.hero}>
+        <View style={styles.heroIndex}>
+          <Link href='/'><TouchableOpacity style={styles.menuItemC}>Início</TouchableOpacity></Link>
+          <Link href='/sobre'><TouchableOpacity style={styles.menuItemC}>Sobre</TouchableOpacity></Link>
+          <Link href='/contato'><TouchableOpacity style={styles.menuItemC}>Contato</TouchableOpacity></Link>
+          <Link href='/login'><TouchableOpacity style={[styles.menuItemC, styles.ativo]}>Login</TouchableOpacity></Link>
+        </View>
+      </View>
 
-                <Text style={styles.Produtopreco}>
-                    R$ {pc.toFixed(2)}
-                </Text>
+      {/* CONTEÚDO */}
+      <View>
 
-                <Link href='/cardapio' asChild>
-                    <TouchableOpacity style={styles.btnVoltar}>
-                        <Text style={styles.textoBtn}>
-                            Voltar para o Cardápio
-                        </Text>
-                    </TouchableOpacity>
-                </Link>
-            </View>
+        <Text style={styles.etiqueta}>
+          Detalhes do Produto
+        </Text>
 
-            {/* ============================================================================================================ */}
-            {/* RODAPÉ */}
-            <View style={styles.rodape}>
-                <Text style={styles.textoRodape}> 2026 Café Central. Todos os direitos reservados.</Text>
-                <Link href='/contato'>
-                    <Text style={styles.linkRodape}>Entre em contato</Text>
-                </Link>
-            </View>
-        </ScrollView>
-    )
+        <Text style={styles.Produtotitulo}>
+          {Produtotitulo}
+        </Text>
 
-};
+        <Text style={styles.Produtodescricao}>
+          {Produtodescricao}
+        </Text>
+
+        <Text style={styles.Produtopreco}>
+          R$ {Number(Produtopc).toFixed(2)}
+        </Text>
+
+        <Link href="/cardapio" asChild>
+          <TouchableOpacity style={styles.btnVoltar}>
+            <Text style={styles.textoBtn}>
+              Voltar para o Cardápio
+            </Text>
+          </TouchableOpacity>
+        </Link>
+
+      </View>
+
+      {/* RODAPÉ */}
+      <View style={styles.rodape}>
+        <Text style={styles.textoRodape}>
+          © 2026 Café Central. Todos os direitos reservados.
+        </Text>
+
+        <Link href="/contato">
+          <Text style={styles.linkRodape}>Entre em contato</Text>
+        </Link>
+      </View>
+
+    </ScrollView>
+  );
+}

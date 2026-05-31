@@ -1,67 +1,68 @@
 import { Link } from 'expo-router';
-import { ScrollView, Text, TextInput, View } from 'react-native';
+import { ScrollView, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { styles } from './styles.js';
 
 export default function Login() {
+
   return (
     <ScrollView>
-      {/* TOPO - HEADER*/}
+      {/* HEADER */}
       <View style={styles.header}>
         <View style={styles.topo}>
-          <Image href='/'></Image>
         </View>
+
         <View>
-          <Link href='/'><Text style={styles.menuItem}>Início</Text></Link>
-          <Link href='/sobre'><Text style={styles.menuItem}>Sobre</Text></Link>
-          <Link href='/contato'><Text style={styles.menuItem}>Contato</Text></Link>
+          <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>
+          <Link href='/sobre'><TouchableOpacity style={styles.menuItem}>Sobre</TouchableOpacity></Link>
+          <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
         </View>
       </View>
-{/* ============================================================================================================ */}
-      {/* Desenvolver Aqui */}
-      <View style={styles.container}>
 
-        <View style={paginaAuth}>
-          <Text style={styles.tituloAuth}>
-            Cadastro
-          </Text>
+      {/* CONTEÚDO */}
+      <View style={styles.containerL}>
+        <View style={styles.paginaAuth}>
+          <Text style={styles.tituloAuth}>Login</Text>
 
           <Text style={styles.textoAuth}>
-            Faça login para obter acesso aos nossos recursos
+              Faça login para obter acesso aos nossos recursos
           </Text>
 
           <View style={styles.blocoAuth}>
-
             <Text style={styles.label}>E-mail</Text>
-            <TextInput placeholder='Digite seu email'
-              keyboardType='email-address'
-              style={styles.input}>
-            </TextInput>
+            <TextInput
+              placeholder="Digite seu email"
+              keyboardType="email-address"
+              style={styles.input}
+            />
 
             <Text style={styles.label}>Senha</Text>
-            <TextInput placeholder='Digite sua senha'
-              secureTextEntry={true}
-              style={styles.input}>
-            </TextInput>
+            <TextInput
+              placeholder="Digite sua senha"
+              secureTextEntry
+              style={styles.input}
+            />
 
-            <Text style={styles.linkAuth}>Nâo possui cadastro?</Text>
-            <Link style={styles.linkAuthDestaque}>
-              <Text>Cadastre-se aqui</Text>
+            <Text style={styles.linkAuth}>Não possui cadastro?</Text>
+
+            <Link href="/cadastro" asChild>
+              <Text style={styles.linkAuthDestaque}>
+                Cadastre-se aqui
+              </Text>
             </Link>
           </View>
         </View>
       </View>
-{/* ============================================================================================================ */}
+
       {/* RODAPÉ */}
       <View style={styles.rodape}>
-        { /* Texto de direitos de autorais */}
-        <Text style={styles.textoRodape}> 2026 Café Central. Todos os direitos reservados.</Text>
+        <Text style={styles.textoRodape}>
+          2026 Café Central. Todos os direitos reservados.
+        </Text>
 
-        { /* Links de Contato */}
         <Link href='/contato'>
-          <Text style={styles.linkRodape}>Entre em contato</Text>'
+          <Text style={styles.linkRodape}>Entre em contato</Text>
         </Link>
       </View>
     </ScrollView>
-
   );
 }
