@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View ,Image} from 'react-native';
 import { styles } from './styles.js';
 
 export default function DS() {

@@ -8,10 +8,13 @@ export default function Login() {
     <ScrollView>
       {/* HEADER */}
       <View style={styles.header}>
-        <View style={styles.topo}>
-        </View>
+          <Link href='/'>
+          <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo}/>
+          </Link>
+      </View>
 
-        <View>
+      <View style={styles.hero}>
+        <View style={styles.heroIndex}>
           <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>
           <Link href='/sobre'><TouchableOpacity style={styles.menuItem}>Sobre</TouchableOpacity></Link>
           <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
@@ -24,31 +27,40 @@ export default function Login() {
           <Text style={styles.tituloAuth}>Login</Text>
 
           <Text style={styles.textoAuth}>
-              Faça login para obter acesso aos nossos recursos
+            Faça login para obter acesso aos nossos recursos
           </Text>
 
           <View style={styles.blocoAuth}>
-            <Text style={styles.label}>E-mail</Text>
+            <Text style={styles.label}>E-mail:</Text>
             <TextInput
               placeholder="Digite seu email"
               keyboardType="email-address"
               style={styles.input}
             />
 
-            <Text style={styles.label}>Senha</Text>
+            <Text style={styles.label}>Senha:</Text>
             <TextInput
               placeholder="Digite sua senha"
               secureTextEntry
               style={styles.input}
             />
 
-            <Text style={styles.linkAuth}>Não possui cadastro?</Text>
+            <TouchableOpacity style={styles.btnAuth}>
+              <Text style={styles.textoBtnAuth}>
+                  Login
+              </Text>
+            </TouchableOpacity>
+
+            <Text style={styles.linkAuth}>
+                Não possui cadastro?
+            </Text>
 
             <Link href="/cadastro" asChild>
               <Text style={styles.linkAuthDestaque}>
                 Cadastre-se aqui
               </Text>
             </Link>
+
           </View>
         </View>
       </View>

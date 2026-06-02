@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native'; // Importa os componentes View e Text do React Native
+import { ScrollView, Text, TouchableOpacity, View ,Image } from 'react-native'; // Importa os componentes View e Text do React Native
 import { styles } from './styles.js';
 
 /* Versão Normal
@@ -32,8 +32,9 @@ export default function Sobre() {
     <ScrollView>
       {/* TOPO - HEADER*/}
       <View style={styles.header}>
-        <View style={styles.headerLogo}>
-        </View>
+          <Link href='/'>
+          <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo}/>
+          </Link>
       </View>
         {/* ============================================================================================================ */}
         {/* Desenvolver Aqui */}

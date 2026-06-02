@@ -4,20 +4,18 @@ export const styles = StyleSheet.create({
     // =======================================================================================================
     /* ================= HEADER ================= */
     header: {
-        backgroundColor: '#dbd5d5',
-        paddingHorizontal: 20,
-        paddingVertical: 15,
-        alignItems: 'center',
-        flex: 1,
+        backgroundColor: '#e6e2e2',
     },
 
     headerLogo: {
-        width: 60,
-        height: 60,
-        display: 'none',
-        justifyContent: 'center',
-        backgroundColor: '#dbd5d5',
-        borderRadius: 50,
+        flex: 'flex-grow',
+        flexDirection: 'row',
+        justifyContent:'center',
+        alignSelf: 'center',
+        backgroundColor: '#e6e2e2',
+        width: '100%',
+        height: 140,
+        resizeMode: 'contain',
     },
 
     menuItem: {
@@ -34,6 +32,7 @@ export const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 5,
     },
+
     // =======================================================================================================
     /* ================= INDEX   ================= */
     hero: {
@@ -47,10 +46,20 @@ export const styles = StyleSheet.create({
         elevation: 5,
     },
 
-    heroImagem: {
-        width: '100%',
-        height: 200,
-        resizeMode: 'cover',
+    imagemContainer: {
+        alignItems: 'center',
+        marginBottom: 30,
+      },
+      
+      imagemCafe: {
+        width: 850,
+        height: 550,
+        borderRadius: 20,
+        width: '90%',
+        height: 250,
+        resizeMode: 'contain',
+        alignItems: 'center',
+        marginTop: 20,
     },
 
     heroConteudo: {
@@ -65,7 +74,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 250,
         textAlign: 'center',
     },
 
@@ -100,7 +108,7 @@ export const styles = StyleSheet.create({
     },
 
     linkAuth: {
-        color: '#202427',
+        color: 'white',
         fontSize: 15,
         fontWeight: 'bold',
         justifyContent: 'center',
@@ -116,11 +124,13 @@ export const styles = StyleSheet.create({
         shadowRadius: 10,
     },
 
+   
+      
+
     // =======================================================================================================
     /* ================= SOBRE ================= */
     heroConteudo: {
         backgroundColor: '#745739'
-
     },
 
     heroSobre: {
@@ -220,7 +230,7 @@ export const styles = StyleSheet.create({
         color: '#333',
     },
 
-    labelmensagem:{
+    labelmensagem: {
         fontSize: 16,
         marginBottom: 5,
         marginTop: 1,
@@ -252,26 +262,42 @@ export const styles = StyleSheet.create({
     },
 
     linkAuth: {
-        color: '#ccc',
-        fontSize: 15,
+        textAlign: 'center',
+        marginTop: 20,
+        color: '#222',
         fontWeight: 'bold',
+    },
+
+    linkAuthDestaque: {
+        color: '#1a4db3',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginTop: 5,
+    },
+
+    btnAuth: {
+        color: '#ffffff',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#e4ad76',
-        padding: 10,
+        width: 150,
+        alignSelf: 'center',
         borderWidth: 1,
         borderColor: '#e4ad76',
         borderRadius: 5,
     },
 
-    linkAuthDestaque: {
-        color: '#0066cc',
-        textDecorationLine: 'underline',
+    textoBtnAuth: {
+        color: '#ffffff',
+        fontSize: 15,
+        textAlign: 'center',
+        padding: 10,
+        color: '#222'
     },
+
     textoAuth: {
         color: '#745739',
         fontSize: 15,
-        marginBottom: 20,
         textAlign: 'center',
     },
 
@@ -295,7 +321,6 @@ export const styles = StyleSheet.create({
 
     // =======================================================================================================
     /* ================= CARDÁPIO ================= */
-
     categorias: {
         justifyContent: 'center',
         flexDirection: 'row',
@@ -346,7 +371,6 @@ export const styles = StyleSheet.create({
 
     //*================================================================================================================================ */
     //================= RODAPÉ ================= 
-
     rodape: {
         backgroundColor: '#3b2a1a',
         paddingVertical: 25,
@@ -368,6 +392,5 @@ export const styles = StyleSheet.create({
         fontSize: 15,
     },
 
-    }
-);  
-//*================================================================================================================================ */
+}
+);

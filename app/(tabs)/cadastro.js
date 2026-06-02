@@ -1,25 +1,84 @@
-import { Link, useRouter } from 'expo-router';
-import { ScrollView, Text, TextInput, View, Image, Pressable, TouchableOpacity } from 'react-native';
+import { Link } from 'expo-router';
+import { useState } from 'react';
+import { ScrollView, Text, TextInput, TouchableOpacity, View,Image } from 'react-native';
 import { styles } from './styles.js';
 
 export default function Cadastro() {
-  const router = useRouter();
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [senhaconfirmar, setSenhaConfirmar] = useState('');
+  const [mensagemSistema, setMensagemSistema] = useState('');
+  const [tipoMensagem, setTipoMensagem] = useState('');
+
+  function validarFormulario() {
+    if (nome === '') {
+      setMensagemSistema('Digite seu nome!');
+      setMensagem('erro');
+      return;
+    };
+    if (/\d/.test(nome)) {
+      setMensagem('O nome não pode conter numero');
+      setTipoMensagem('erro');
+      return;
+    };
+    if (email === ''){
+      setMensagemSistema('');
+      setMensagem('erro!');
+      return;
+    };
+    if (!email.includes('@') || !email.includes('.com')){
+      setMensagemSistema('Digite corretamente o Email');
+      setTipoMensagem('erro');
+      return;
+    };
+    if (senha === ''){
+      setMensagemSistema('Digite sua Senha');
+      setTipoMensagem('erro');
+      return;
+    };
+    if (senhaconfirmar === ''){
+      setMensagemSistema('Confirme sua Senha');
+      setTipoMensagem('erro');
+      return;
+    };
+    if (senha.length < 8){
+      setMensagemSistema('A Senha deve conter no minimo 8 caracteres');
+      setTipoMensagem('erro');
+      return;
+    };
+    if (senhaconfirmar.length < 8){
+      setMensagemSistema('A Confirmacao da senha deve conter no minimo 8 caracteres');
+      setTipoMensagem('erro');
+      return;
+    };
+
+    setMensagemSistema('Mensagem enviada com sucesso!');
+    setMensagem('sucesso!');
+
+    setNome('');
+    setEmail('');
+    setSenha('');
+    setSenhaConfirmar('');
+  }
 
   return (
     <ScrollView>
       {/* HEADER */}
       <View style={styles.header}>
-        <View style={styles.topo}>
-          <Image/>
-        </View>
+          <Link href='/'>
+          <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo}/>
+          </Link>
+          </View>
 
-        <View>
+      <View style={styles.hero}>
+        <View style={styles.heroIndex}>
           <Link href='/'><TouchableOpacity style={styles.menuItemC}>Início</TouchableOpacity></Link>
           <Link href='/sobre'><TouchableOpacity style={styles.menuItemC}>Sobre</TouchableOpacity></Link>
           <Link href='/contato'><TouchableOpacity style={styles.menuItemC}>Contato</TouchableOpacity></Link>
-          <Link href='/login'><TouchableOpacity style={[styles.menuItemC, styles.ativo]}>Login</TouchableOpacity></Link>
         </View>
       </View>
+
 
       {/* CONTEÚDO */}
       <View style={styles.containerC}>
@@ -37,7 +96,7 @@ export default function Cadastro() {
             <Text style={styles.label}>E-mail:</Text>
             <TextInput
               style={styles.input}
-              placeholder="Digite seu email"
+              placeholder="Digite seu e-mail"
               keyboardType="email-address"
             />
 
@@ -51,17 +110,19 @@ export default function Cadastro() {
             <Text style={styles.label}>Confirmar senha:</Text>
             <TextInput
               style={styles.input}
-              placeholder="Digite sua senha novamente"
+              placeholder="Confirme sua senha"
               secureTextEntry
             />
 
-            <Text style={styles.linkAuth}>
+            <TouchableOpacity style={styles.btnAuth} onPress={validarFormulario}>
+              <Text style={styles.textoBtnAuth}>
                 Cadastrar-se
-            </Text>
+              </Text>
+            </TouchableOpacity>
 
-            <Pressable onPress={() => router.push('/login')}>
+            <Link href='/login' style={styles.linkAuthDestaque}>
               <Text style={styles.linkAuthDestaque}> Já possui uma conta?</Text>
-            </Pressable>
+            </Link>
           </View>
         </View>
       </View>

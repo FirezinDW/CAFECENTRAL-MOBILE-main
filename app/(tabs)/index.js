@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View ,Image } from 'react-native';
 import { styles } from './styles.js';
 
 export default function Index() {
@@ -7,9 +7,10 @@ export default function Index() {
     <ScrollView  >
       {/* TOPO - HEADER*/}
       <View style={styles.header}>
-        <View style={styles.headerLogo}>
+                <Link href='/'>
+                <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo}/>
+                </Link>  
         </View>
-      </View>
         {/* ============================================================================================================ */}
         {/* Desenvolver Aqui */}
         <View style={styles.hero}>
@@ -23,6 +24,13 @@ export default function Index() {
           {/* ============================================================================================================ */}
 
           <View style={styles.heroConteudo}>
+          <View style={styles.imagemContainer}>
+          <Image
+              source={require('../../assets/images/cafe_central_interior.jpg')}
+              style={styles.imagemCafe}
+              resizeMode="cover"
+            />
+          </View>
               <Text style={styles.heroTexto1}>Bem vindo ao</Text>
               <Text style={styles.heroTexto2}>Café Central Mobile!</Text>
           </View>
@@ -31,7 +39,7 @@ export default function Index() {
               <Text style={styles.textoLogin}> Faça login para ter acesso total aos nossos recursos!</Text>
               <Link href='/login'>
                 <TouchableOpacity style={styles.btnAuth}>
-                  <Text style={styles.linkAuth}>Fazer Login</Text>
+                  <Text style={styles.textoBtnAuth}>Fazer Login</Text>
                 </TouchableOpacity>
               </Link>
           </View>

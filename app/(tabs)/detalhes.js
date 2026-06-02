@@ -2,7 +2,8 @@ import {
   View,
   Text,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  Image
 } from 'react-native';
 import { Link, useLocalSearchParams } from 'expo-router';
 import { styles } from './styles';
