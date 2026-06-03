@@ -1,76 +1,83 @@
 import { Link } from 'expo-router';
 import { useState } from 'react';
-import { ScrollView, Text, TextInput, TouchableOpacity, View,Image } from 'react-native';
+import { ScrollView, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import { styles } from './styles.js';
 
 export default function Cadastro() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [senhaconfirmar, setSenhaConfirmar] = useState('');
+  const [confirmarSenha, setConfirmarSenha] = useState('');
+
   const [mensagemSistema, setMensagemSistema] = useState('');
   const [tipoMensagem, setTipoMensagem] = useState('');
 
-  function validarFormulario() {
+  function validarCadastro() {
     if (nome === '') {
       setMensagemSistema('Digite seu nome!');
-      setMensagem('erro');
+      setTipoMensagem('erro');
       return;
     };
     if (/\d/.test(nome)) {
-      setMensagem('O nome não pode conter numero');
-      setTipoMensagem('erro');
+      setMensagem('O nome não pode conter número!');
+      setTipoMensagem('erro!');
       return;
     };
-    if (email === ''){
-      setMensagemSistema('');
-      setMensagem('erro!');
+    if (email === '') {
+      setMensagemSistema('Digite seu e-mail');
+      setTipoMensagem('erro!');
       return;
     };
-    if (!email.includes('@') || !email.includes('.com')){
-      setMensagemSistema('Digite corretamente o Email');
-      setTipoMensagem('erro');
+    if (!email.includes('@') || !email.includes('.com')) {
+      setMensagemSistema('Digite um e-mail válido!');
+      setTipoMensagem('erro!');
       return;
     };
-    if (senha === ''){
-      setMensagemSistema('Digite sua Senha');
-      setTipoMensagem('erro');
+    if (senha === '') {
+      setMensagemSistema('Digite sua senha!');
+      setTipoMensagem('erro!');
       return;
     };
-    if (senhaconfirmar === ''){
-      setMensagemSistema('Confirme sua Senha');
-      setTipoMensagem('erro');
+    if (confirmarSenha === '') {
+      setMensagemSistema('Confirme sua senha!');
+      setTipoMensagem('erro!');
       return;
     };
-    if (senha.length < 8){
-      setMensagemSistema('A Senha deve conter no minimo 8 caracteres');
-      setTipoMensagem('erro');
+    if (senha.length < 8) {
+      setMensagemSistema('A senha deve conter no mínimo 8 caracteres!');
+      setTipoMensagem('erro!');
       return;
     };
-    if (senhaconfirmar.length < 8){
-      setMensagemSistema('A Confirmacao da senha deve conter no minimo 8 caracteres');
-      setTipoMensagem('erro');
+    if (confirmarSenha.length < 8) {
+      setMensagemSistema('A senha deve conter no mínimo 8 caracteres!');
+      setTipoMensagem('erro!');
       return;
     };
+    if (!confirmarSenha.includes(senha)) {
+      setMensagemSistema('As senhas não coincidem!');
+      setTipoMensagem('erro!');
+      return;
+    }
 
-    setMensagemSistema('Mensagem enviada com sucesso!');
-    setMensagem('sucesso!');
+    setMensagemSistema('Cadastro realizado com sucesso!');
+    setTipoMensagem('sucesso!');
 
     setNome('');
     setEmail('');
     setSenha('');
-    setSenhaConfirmar('');
+    setConfirmarSenha('');
   }
 
   return (
     <ScrollView>
       {/* HEADER */}
       <View style={styles.header}>
-          <Link href='/'>
-          <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo}/>
-          </Link>
-          </View>
+        <Link href='/'>
+          <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo} />
+        </Link>
+      </View>
 
+      {/* MENU */}
       <View style={styles.hero}>
         <View style={styles.heroIndex}>
           <Link href='/'><TouchableOpacity style={styles.menuItemC}>Início</TouchableOpacity></Link>
@@ -91,13 +98,19 @@ export default function Cadastro() {
 
           <View style={styles.blocoAuth}>
             <Text style={styles.label}>Nome:</Text>
-            <TextInput style={styles.input} placeholder="Digite seu nome" />
+            <TextInput
+              style={styles.input}
+              placeholder="Digite seu nome"
+              value={nome}
+              onChangeText={setNome} />
 
             <Text style={styles.label}>E-mail:</Text>
             <TextInput
               style={styles.input}
               placeholder="Digite seu e-mail"
               keyboardType="email-address"
+              value={email}
+              onChangeText={setEmail}
             />
 
             <Text style={styles.label}>Senha:</Text>
@@ -105,6 +118,8 @@ export default function Cadastro() {
               style={styles.input}
               placeholder="Digite sua senha"
               secureTextEntry
+              value={senha}
+              onChangeText={setSenha}
             />
 
             <Text style={styles.label}>Confirmar senha:</Text>
@@ -112,9 +127,15 @@ export default function Cadastro() {
               style={styles.input}
               placeholder="Confirme sua senha"
               secureTextEntry
+              value={confirmarSenha}
+              onChangeText={setConfirmarSenha}
             />
 
-            <TouchableOpacity style={styles.btnAuth} onPress={validarFormulario}>
+            <Text style={tipoMensagem == 'erro' ? styles.mensagemErro : styles.mensagemSucesso}>
+              {mensagemSistema}
+            </Text>
+
+            <TouchableOpacity style={styles.btnAuth} onPress={validarCadastro}>
               <Text style={styles.textoBtnAuth}>
                 Cadastrar-se
               </Text>

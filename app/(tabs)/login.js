@@ -1,18 +1,54 @@
 import { Link } from 'expo-router';
 import { ScrollView, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { styles } from './styles.js';
+import { useState } from 'react'
 
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+  const [mensagemSistema, setMensagemSistema] = useState('');
+  const [tipoMensagem, setTipoMensagem] = useState('');
+
+  function validarLogin() {
+    if (email == '') {
+      setMensagemSistema('Digite seu e-mail!');
+      setTipoMensagem('erro!');
+      return;
+    };
+    if (!email.includes('@') || !email.includes('.com')) {
+      setMensagemSistema('Digite um e-mail válido!')
+      setTipoMensagem('erro!')
+      return
+    };
+    if (senha == '') {
+      setMensagemSistema('Digite sua senha!');
+      setTipoMensagem('erro!');
+      return;
+    };
+    if (senha.length < 8) {
+      setMensagemSistema('A senha deve conter no mínimo 8 caracteres!');
+      setTipoMensagem('erro!');
+      return;
+    }
+
+    setMensagemSistema('Login efetuado com sucesso!');
+    setTipoMensagem('sucesso!');
+
+    setEmail('');
+    setSenha('');
+  }
 
   return (
     <ScrollView>
       {/* HEADER */}
       <View style={styles.header}>
-          <Link href='/'>
-          <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo}/>
-          </Link>
+        <Link href='/'>
+          <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo} />
+        </Link>
       </View>
 
+      {/* MENU */}
       <View style={styles.hero}>
         <View style={styles.heroIndex}>
           <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>
@@ -36,6 +72,8 @@ export default function Login() {
               placeholder="Digite seu email"
               keyboardType="email-address"
               style={styles.input}
+              value={email}
+              onChangeText={setEmail}
             />
 
             <Text style={styles.label}>Senha:</Text>
@@ -43,16 +81,22 @@ export default function Login() {
               placeholder="Digite sua senha"
               secureTextEntry
               style={styles.input}
+              value={senha}
+              onChangeText={setSenha}
             />
 
-            <TouchableOpacity style={styles.btnAuth}>
+            <Text style={tipoMensagem == 'erro' ? styles.mensagemErro : styles.mensagemSucesso}>
+              {mensagemSistema}
+            </Text>
+
+            <TouchableOpacity style={styles.btnAuth} onPress={validarLogin}>
               <Text style={styles.textoBtnAuth}>
-                  Login
+                Login
               </Text>
             </TouchableOpacity>
 
             <Text style={styles.linkAuth}>
-                Não possui cadastro?
+              Não possui cadastro?
             </Text>
 
             <Link href="/cadastro" asChild>

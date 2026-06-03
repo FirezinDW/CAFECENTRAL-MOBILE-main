@@ -37,7 +37,7 @@ export default function Sobre() {
           </Link>
       </View>
         {/* ============================================================================================================ */}
-        {/* Desenvolver Aqui */}
+        {/* MENU */}
         <View style={styles.hero}>
           <View style={styles.heroIndex}>
             <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>

@@ -9,110 +9,110 @@ export default function Cardapio() {
   const produtos = [
     {
       id: '1',
-      Produtotitulo: 'Espresso',
-      Produtotimgem: '',
-      Produtourl: '/produto1',
-      Produtodescricao: 'Um shot concentrado e aromático do nosso blend especial, com crema perfeita. Ideal para os amantes do café puro.',
-      Produtopc: 'R$ 3,00',
+      titulo: 'Espresso',
+      imagem: require('../../assets/images/espresso.png'),
+      url: '/produto1',
+      descricao: 'Um shot concentrado e aromático do nosso blend especial, com crema perfeita. Ideal para os amantes do café puro.',
+      preco: 'R$ 3,00',
     },
 
     {
       id: '2',
-      Produtotitulo: 'Cappuccino Clássico',
-      Produtotimgem: '',
-      Produtourl: '/produto2',
-      Produtodescricao: 'Uma bebida encorpada, com sabor equilibrado, sem chocolate e servida com um toque de canela por cima, oferecendo textura aveludada e aroma intenso.',
-      Produtopc: 'R$ 8,00',
+      titulo: 'Cappuccino Clássico',
+      imagem: require('../../assets/images/cappucciono_classico.png'),
+      url: '/produto2',
+      descricao: 'Uma bebida encorpada, com sabor equilibrado, sem chocolate e servida com um toque de canela por cima, oferecendo textura aveludada e aroma intenso.',
+      preco: 'R$ 8,00',
     },
 
     {
       id: '3',
-      Produtotitulo: 'Latte Macchiato',
-      Produtotimgem: '',
-      Produtourl: '/produto3',
-      Produtodescricao: 'Leite vaporizado delicadamente manchado com um shot de espresso, criando camadas visíveis e um sabor suave e cremoso.',
-      Produtopc: 'R$ 8,00',
+      titulo: 'Latte Macchiato',
+      imagem: require('../../assets/images/latte_macchiato.png'),
+      url: '/produto3',
+      descricao: 'Leite vaporizado delicadamente manchado com um shot de espresso, criando camadas visíveis e um sabor suave e cremoso.',
+      preco: 'R$ 8,00',
     },
 
     {
       id: '4',
-      Produtotitulo: 'Mocha',
-      Produtotimgem: '',
-      Produtourl: '/produto4',
-      Produtodescricao: 'Uma deliciosa combinação de espresso, chocolate premium, leite vaporizado e chantilly, para um toque de indulgência.',
-      Produtopc: 'R$ 7,00',
+      titulo: 'Mocha',
+      imagem: require('../../assets/images/mocha.png'),
+      url: '/produto4',
+      descricao: 'Uma deliciosa combinação de espresso, chocolate premium, leite vaporizado e chantilly, para um toque de indulgência.',
+      preco: 'R$ 7,00',
     },
 
     {
       id: '5',
-      Produtotitulo: 'Pão de Queijo Artesanal',
-      Produtotimgem: '',
-      Produtourl: '/produto5',
-      Produtodescricao: 'Delicioso pão de queijo artesanal, feito com leite e queijo fresco. O sabor autêntico que encanta todos os paladares.',
-      Produtopc: 'R$ 6,00',
+      titulo: 'Pão de Queijo Artesanal',
+      imagem: require('../../assets/images/pao_de_queijo_artesanal.png'),
+      url: '/produto5',
+      descricao: 'Delicioso pão de queijo artesanal, feito com leite e queijo fresco. O sabor autêntico que encanta todos os paladares.',
+      preco: 'R$ 6,00',
     },
 
     {
       id: '6',
-      Produtotitulo: 'Sanduíche de Queijo Quente',
-      Produtotimgem: '',
-      Produtourl: '/produto6',
-      Produtodescricao: 'Pão de forma tostado com queijo mussarela derretido. Simples e delicioso.',
-      Produtopc: 'R$ 8,00',
+      titulo: 'Sanduíche de Queijo Quente',
+      imagem: require('../../assets/images/sanduiche_de_queijo_quente.png'),
+      url: '/produto6',
+      descricao: 'Pão de forma tostado com queijo mussarela derretido. Simples e delicioso.',
+      preco: 'R$ 8,00',
     },
 
     {
       id: '7',
-      Produtotitulo: 'Quiche Lorraine',
-      Produtotimgem: '',
-      Produtourl: '/produto7',
-      Produtodescricao: 'Uma torta salgada clássica francesa, com recheio cremoso de bacon e queijo. Servida com uma pequena salada verde.',
-      Produtopc: 'R$ 5,00',
+      titulo: 'Quiche Lorraine',
+      imagem: require('../../assets/images/quiche_lorraine'),
+      url: '/produto7',
+      descricao: 'Uma torta salgada clássica francesa, com recheio cremoso de bacon e queijo. Servida com uma pequena salada verde.',
+      preco: 'R$ 5,00',
     },
 
     {
       id: '8',
-      Produtotitulo: 'Baguete Recheada',
-      Produtotimgem: '',
-      Produtourl: '/produto8',
-      Produtodescricao: 'Baguete crocante recheada com presunto, queijo e tomate fresco. Ideal para um lanche rápido e saboroso.',
-      Produtopc: 'R$ 9,00',
+      titulo: 'Baguete Recheada',
+      imagem: require('../../assets/images/baguete_recheada.png'),
+      url: '/produto8',
+      descricao: 'Baguete crocante recheada com presunto, queijo e tomate fresco. Ideal para um lanche rápido e saboroso.',
+      preco: 'R$ 9,00',
     },
 
     {
       id: '9',
-      Produtotitulo: 'Croissant Amanteigado ',
-      Produtotimgem: '',
-      Produtourl: '/produto9',
-      Produtodescricao: 'Crocante por fora, macio por dentro, com o sabor inconfundível da manteiga. Perfeito para acompanhar seu café.',
-      Produtopc: 'R$ 7,00',
+      titulo: 'Croissant Amanteigado ',
+      imagem: require('../../assets/images/croissant_amanteigado.png'),
+      url: '/produto9',
+      descricao: 'Crocante por fora, macio por dentro, com o sabor inconfundível da manteiga. Perfeito para acompanhar seu café.',
+      preco: 'R$ 7,00',
     },
 
     {
       id: '10',
-      Produtotitulo: 'Torta de Maçã com Sorvete',
-      Produtotimgem: '',
-      Produtourl: '/produto10',
-      Produtodescricao: 'Fatias de maçã caramelizada em uma massa crocante, servida quente com uma bola de sorvete de creme.',
-      Produtopc: 'R$ 8,00',
+      titulo: 'Torta de Maçã com Sorvete',
+      imagem: require('../../assets/images/torta_de_maca_com_sorvete.png'),
+      url: '/produto10',
+      descricao: 'Fatias de maçã caramelizada em uma masa crocante, servida quente com uma bola de sorvete de creme.',
+      preco: 'R$ 8,00',
     },
 
     {
       id: '11',
-      Produtotitulo: 'Brownie de Chocolate com Nozes',
-      Produtotimgem: '',
-      Produtourl: '/produto11',
-      Produtodescricao: 'Intenso e úmido, com pedaços crocantes de nozes. Uma explosão de sabor a cada mordida.',
-      Produtopc: 'R$ 7,00',
+      titulo: 'Brownie de Chocolate com Nozes',
+      imagem: require('../../assets/images/brownie_de_chocolate_com_nozes.png'),
+      url: '/produto11',
+      descricao: 'Intenso e úmido, com pedaços crocantes de nozes. Uma explosão de sabor a cada mordida.',
+      preco: 'R$ 7,00',
     },
 
     {
       id: '12',
-      Produtotitulo: 'Bolo Red Velvet',
-      Produtotimgem: '',
-      Produtourl: '/produto12',
-      Produtodescricao: 'Um clássico americano, com camadas de bolo aveludado de chocolate e um cremoso recheio de cream cheese.',
-      Produtopc: 'R$ 9,00',
+      titulo: 'Bolo Red Velvet',
+      imagem: require('../../assets/images/bolo_red_valet.png'),
+      url: '/produto12',
+      descricao: 'Um clássico americano, com camadas de bolo aveludado de chocolate e um cremoso recheio de cream cheese.',
+      preco: 'R$ 9,00',
     },
   ];
 
@@ -121,8 +121,19 @@ export default function Cardapio() {
 
       {/* HEADER */}
       <View style={styles.header}>
-        <Text style={styles.titulo}>Cardápio</Text>
+        <Link href='/'>
+          <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo} />
+        </Link>
       </View>
+
+      {/* MENU */}
+        <View style={styles.hero}>
+          <View style={styles.heroIndex}>
+            <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>
+            <Link href='/sobre'><TouchableOpacity style={[styles.menuItem , styles.ativo]}>Sobre</TouchableOpacity></Link>
+            <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
+          </View>
+        </View>
 
       {/* LISTA */}
       <FlatList
