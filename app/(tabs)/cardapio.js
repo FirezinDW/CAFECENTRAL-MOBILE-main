@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
 import { useState } from 'react';
-import { FlatList, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { FlatList, ScrollView, Text, TextInput, TouchableOpacity, View , Image} from 'react-native';
 import { styles } from './styles.js';
 
 export default function Cardapio() {
@@ -19,7 +19,7 @@ export default function Cardapio() {
     {
       id: '2',
       titulo: 'Cappuccino Clássico',
-      imagem: require('../../assets/images/cappucciono_classico.png'),
+      imagem: require('../../assets/images/cappuccino_classico.png'),
       url: '/produto2',
       descricao: 'Uma bebida encorpada, com sabor equilibrado, sem chocolate e servida com um toque de canela por cima, oferecendo textura aveludada e aroma intenso.',
       preco: 'R$ 8,00',
@@ -64,7 +64,7 @@ export default function Cardapio() {
     {
       id: '7',
       titulo: 'Quiche Lorraine',
-      imagem: require('../../assets/images/quiche_lorraine'),
+      imagem: require('../../assets/images/quiche_lorraine.png'),
       url: '/produto7',
       descricao: 'Uma torta salgada clássica francesa, com recheio cremoso de bacon e queijo. Servida com uma pequena salada verde.',
       preco: 'R$ 5,00',
@@ -109,7 +109,7 @@ export default function Cardapio() {
     {
       id: '12',
       titulo: 'Bolo Red Velvet',
-      imagem: require('../../assets/images/bolo_red_valet.png'),
+      imagem: require('../../assets/images/bolo_red_velvet.png'),
       url: '/produto12',
       descricao: 'Um clássico americano, com camadas de bolo aveludado de chocolate e um cremoso recheio de cream cheese.',
       preco: 'R$ 9,00',
