@@ -1,12 +1,6 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Image
-} from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { Link, useLocalSearchParams } from 'expo-router';
-import { styles } from './styles';
+import { styles } from '../../assets/style/styles.js';
 
 export default function Detalhes() {
 
@@ -28,10 +22,10 @@ export default function Detalhes() {
       {/* MENU */}
       <View style={styles.hero}>
         <View style={styles.heroIndex}>
-          <Link href='/'><TouchableOpacity style={styles.menuItemC}>Início</TouchableOpacity></Link>
-          <Link href='/sobre'><TouchableOpacity style={styles.menuItemC}>Sobre</TouchableOpacity></Link>
-          <Link href='/contato'><TouchableOpacity style={styles.menuItemC}>Contato</TouchableOpacity></Link>
-          <Link href='/login'><TouchableOpacity style={[styles.menuItemC, styles.ativo]}>Login</TouchableOpacity></Link>
+          <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>
+          <Link href='/sobre'><TouchableOpacity style={styles.menuItem}>Sobre</TouchableOpacity></Link>
+          <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
+          <Link href='/login'><TouchableOpacity style={[styles.menuItem, styles.ativo]}>Login</TouchableOpacity></Link>
         </View>
       </View>
 

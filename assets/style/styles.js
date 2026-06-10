@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+
     // =======================================================================================================
     /* ================= HEADER ================= */
     header: {
@@ -103,30 +104,6 @@ export const styles = StyleSheet.create({
         textAlign: "center"
     },
 
-    btnAuth: {
-        alignItems: 'center'
-    },
-
-    linkAuth: {
-        color: 'white',
-        fontSize: 15,
-        fontWeight: 'bold',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#e4ad76',
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#e4ad76',
-        borderRadius: 5,
-        shadowColor: '#000000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.5,
-        shadowRadius: 10,
-    },
-
-   
-      
-
     // =======================================================================================================
     /* ================= SOBRE ================= */
     heroConteudo: {
@@ -167,37 +144,13 @@ export const styles = StyleSheet.create({
     },
 
     // =======================================================================================================
-    /* ================= CONTATO ================= */
+    /* ================= CONTATO | LOGIN | CADASTRO ================= */
     container: {
         backgroundColor: '#745739',
         padding: 20,
     },
 
-    containerC: {
-        backgroundColor: '#745739',
-        flexdiretion: 'column',
-        alignItems: 'center',
-        padding: 20,
-    },
-
-    containerL: {
-        backgroundColor: '#745739',
-        flexdiretion: 'column',
-        alignItems: 'center',
-        padding: 20,
-    },
-
-    heroContato: {
-        flex: 1,
-        backgroundColor: '#745739',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 20,
-        minHeight: 500,
-        borderRadius: 15,
-    },
-
-    paginaAuth: {
+    pagina: {
         width: '100%',
         maxWidth: 400,
         backgroundColor: '#fff',
@@ -211,16 +164,12 @@ export const styles = StyleSheet.create({
         shadowRadius: 3.84,
     },
 
-    tituloAuth: {
+    titulo: {
         color: '#e4ad76',
         fontSize: 30,
         fontWeight: 'bold',
         marginBottom: 20,
         textAlign: 'center',
-    },
-
-    formcontato: {
-        width: '100%',
     },
 
     label: {
@@ -230,12 +179,6 @@ export const styles = StyleSheet.create({
         color: '#333',
     },
 
-    labelmensagem: {
-        fontSize: 16,
-        marginBottom: 5,
-        marginTop: 1,
-        color: '#333',
-    },
 
     input: {
         borderWidth: 1,
@@ -252,18 +195,20 @@ export const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 8,
         marginTop: 15,
-        alignItems: 'center',
+        alignSelf: 'center',
+        width: 150,
+        borderRadius: 5,
+        marginTop: 5
     },
 
     textoSubmit: {
-        color: '#fff',
-        fontWeight: 'bold',
         fontSize: 16,
+        textAlign: 'center'
     },
 
     linkAuth: {
         textAlign: 'center',
-        marginTop: 20,
+        marginTop: 12,
         color: '#222',
         fontWeight: 'bold',
     },
@@ -272,7 +217,7 @@ export const styles = StyleSheet.create({
         color: '#1a4db3',
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 5,
+        marginTop: 10,
     },
 
     btnAuth: {
@@ -285,6 +230,7 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#e4ad76',
         borderRadius: 5,
+        marginTop: 5
     },
 
     textoBtnAuth: {
@@ -301,23 +247,17 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
     },
 
-    menuItemC: {
-        color: '#000000',
-        backgroundColor: '#dbd5d5',
-        padding: 15,
-        fontSize: 15,
-        alignSelf: 'center',
-        borderRadius: 8,
-        margin: 10,
-        textDecorationLine: 'none',
-        shadowColor: '#000000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.5,
-        shadowRadius: 10,
-        elevation: 5,
-        gap: 10,
+    mensagemSucesso: {
+        color: 'green',
+        textAlign: 'center',
+        marginBottom: 20
     },
 
+    mensagemErro: {
+        color: 'red',
+        textAlign: 'center',
+        marginBottom: 10
+    },
 
     // =======================================================================================================
     /* ================= CARDÁPIO ================= */
@@ -345,14 +285,6 @@ export const styles = StyleSheet.create({
     },
 
     // =======================================================================================================
-    /* ================= LOGIN ================= */
-
-
-
-    /* ================= CADASTRO ================= */
-
-
-
     /* ================= DETALHES ================= */
 
 

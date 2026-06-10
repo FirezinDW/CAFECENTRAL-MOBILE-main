@@ -1,7 +1,7 @@
 import { Link } from 'expo-router';
-import { ScrollView, Text, TouchableOpacity, TextInput, View,Image } from 'react-native';
-import { styles } from './styles.js';
-import { useState } from 'react'
+import { useState } from 'react';
+import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { styles } from '../../assets/style/styles.js';
 
 export default function Contato() {
     const [nome, setNome] = useState('');
@@ -45,12 +45,14 @@ export default function Contato() {
 
     return (
         <ScrollView>
+            
             {/* TOPO - HEADER*/}
             <View style={styles.header}>
                 <Link href='/'>
-                <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo}/>
+                    <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo} />
                 </Link>
             </View>
+
             {/* ============================================================================================================ */}
             {/* MENU */}
             <View style={styles.hero}>
@@ -60,53 +62,53 @@ export default function Contato() {
                     <Link href='/contato'><TouchableOpacity style={[styles.menuItem, styles.ativo]}>Contato</TouchableOpacity></Link>
                 </View>
             </View>
+
             {/* ============================================================================================================ */}
             {/* BASE - BODY */}
             <View style={styles.container}>
-                <View style={styles.heroContato}>
-                    <View style={styles.paginaAuth}>
-                        <Text style={styles.tituloAuth}>
-                            Fale Conosco
-                        </Text>
-                        <View style={styles.formcontato}>
-                            <Text style={styles.label}>Nome: </Text>
-                            <TextInput placeholder='Digite seu nome'
-                                style={styles.input}
-                                value={nome}
-                                onChangeText={setNome}>
-                            </TextInput>
+                <View style={styles.pagina}>
+                    <Text style={styles.titulo}>
+                        Fale Conosco
+                    </Text>
+                    <View style={styles.blocoAuth}>
+                        <Text style={styles.label}>Nome: </Text>
+                        <TextInput placeholder='Digite seu nome'
+                            style={styles.input}
+                            value={nome}
+                            onChangeText={setNome}>
+                        </TextInput>
 
-                            <Text style={styles.label}>E-mail: </Text>
-                            <TextInput placeholder='Digite seu e-mail'
-                                keyboardType='email-address'
-                                style={styles.input}
-                                value={email}
-                                onChangeText={setEmail}>
-                            </TextInput>
+                        <Text style={styles.label}>E-mail: </Text>
+                        <TextInput placeholder='Digite seu e-mail'
+                            keyboardType='email-address'
+                            style={styles.input}
+                            value={email}
+                            onChangeText={setEmail}>
+                        </TextInput>
 
-                            <Text style={styles.label}>Mensagem: </Text>
-                            <TextInput placeholder='Digite sua Mensagem'
-                                style={styles.input}
-                                multiline={true}
-                                numberOfLines={7}
-                                value={mensagem}
-                                onChangeText={setMensagem}>
-                                {/* multiline para adicionar mais linhas ao input
+                        <Text style={styles.label}>Mensagem: </Text>
+                        <TextInput placeholder='Digite sua Mensagem'
+                            style={styles.input}
+                            multiline={true}
+                            numberOfLines={7}
+                            value={mensagem}
+                            onChangeText={setMensagem}>
+                            {/* multiline para adicionar mais linhas ao input
                                 junto com o numberoflines para adicionar o numero de linhas que quer a mais */}
-                            </TextInput>
+                        </TextInput>
 
-                            <Text style={tipoMensagem == 'erro' ? styles.mensagemErro : styles.mensagemSucesso}>
-                                {mensagemSistema}
-                            </Text>
+                        <Text style={tipoMensagem == 'erro!' ? styles.mensagemErro : styles.mensagemSucesso}>
+                            {mensagemSistema}
+                        </Text>
 
-                            <TouchableOpacity style={styles.btnSubmit} onPress={validarFormulario}>
-                                <Text style={styles.textoSubmit}>Enviar</Text>
-                            </TouchableOpacity>
+                        <TouchableOpacity style={styles.btnSubmit} onPress={validarFormulario}>
+                            <Text style={styles.textoSubmit}>Enviar</Text>
+                        </TouchableOpacity>
 
-                        </View>
                     </View>
                 </View>
             </View>
+
             {/* ============================================================================================================ */}
             {/* RODAPÉ - FOOTER */}
             <View style={styles.rodape}>

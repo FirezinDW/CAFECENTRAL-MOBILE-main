@@ -1,7 +1,7 @@
 import { Link } from 'expo-router';
 import { useState } from 'react';
 import { FlatList, ScrollView, Text, TextInput, TouchableOpacity, View , Image} from 'react-native';
-import { styles } from './styles.js';
+import { styles } from '../../assets/style/styles.js';
 
 export default function Cardapio() {
 
@@ -134,6 +134,9 @@ export default function Cardapio() {
             <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
           </View>
         </View>
+
+      {/* CATEGORIAS */}
+      
 
       {/* LISTA */}
       <FlatList

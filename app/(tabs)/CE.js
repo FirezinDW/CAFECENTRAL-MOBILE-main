@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
-import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
-import { styles } from './styles.js';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { styles } from '../../assets/style/styles.js';
 
 export default function CE() {
     return (

@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
 import { ScrollView, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
-import { styles } from './styles.js';
+import { styles } from '../../assets/style/styles.js';
 import { useState } from 'react'
 
 export default function Login() {
@@ -58,9 +58,9 @@ export default function Login() {
       </View>
 
       {/* CONTEÚDO */}
-      <View style={styles.containerL}>
-        <View style={styles.paginaAuth}>
-          <Text style={styles.tituloAuth}>Login</Text>
+      <View style={styles.container}>
+        <View style={styles.pagina}>
+          <Text style={styles.titulo}>Login</Text>
 
           <Text style={styles.textoAuth}>
             Faça login para obter acesso aos nossos recursos
@@ -85,7 +85,7 @@ export default function Login() {
               onChangeText={setSenha}
             />
 
-            <Text style={tipoMensagem == 'erro' ? styles.mensagemErro : styles.mensagemSucesso}>
+            <Text style={tipoMensagem == 'erro!' ? styles.mensagemErro : styles.mensagemSucesso}>
               {mensagemSistema}
             </Text>
 

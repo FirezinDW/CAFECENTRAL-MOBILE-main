@@ -1,7 +1,7 @@
 import { Link } from 'expo-router';
 import { useState } from 'react';
 import { ScrollView, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
-import { styles } from './styles.js';
+import { styles } from '../../assets/style/styles.js';
 
 export default function Cadastro() {
   const [nome, setNome] = useState('');
@@ -15,7 +15,7 @@ export default function Cadastro() {
   function validarCadastro() {
     if (nome === '') {
       setMensagemSistema('Digite seu nome!');
-      setTipoMensagem('erro');
+      setTipoMensagem('erro!');
       return;
     };
     if (/\d/.test(nome)) {
@@ -80,17 +80,16 @@ export default function Cadastro() {
       {/* MENU */}
       <View style={styles.hero}>
         <View style={styles.heroIndex}>
-          <Link href='/'><TouchableOpacity style={styles.menuItemC}>Início</TouchableOpacity></Link>
-          <Link href='/sobre'><TouchableOpacity style={styles.menuItemC}>Sobre</TouchableOpacity></Link>
-          <Link href='/contato'><TouchableOpacity style={styles.menuItemC}>Contato</TouchableOpacity></Link>
+          <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>
+          <Link href='/sobre'><TouchableOpacity style={styles.menuItem}>Sobre</TouchableOpacity></Link>
+          <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
         </View>
       </View>
 
-
       {/* CONTEÚDO */}
-      <View style={styles.containerC}>
-        <View style={styles.paginaAuth}>
-          <Text style={styles.tituloAuth}>Cadastro</Text>
+      <View style={styles.container}>
+        <View style={styles.pagina}>
+          <Text style={styles.titulo}>Cadastro</Text>
 
           <Text style={styles.textoAuth}>
             Crie sua conta para acessar todos os recursos
@@ -131,7 +130,7 @@ export default function Cadastro() {
               onChangeText={setConfirmarSenha}
             />
 
-            <Text style={tipoMensagem == 'erro' ? styles.mensagemErro : styles.mensagemSucesso}>
+            <Text style={tipoMensagem == 'erro!' ? styles.mensagemErro : styles.mensagemSucesso}>
               {mensagemSistema}
             </Text>
 
@@ -141,8 +140,10 @@ export default function Cadastro() {
               </Text>
             </TouchableOpacity>
 
-            <Link href='/login' style={styles.linkAuthDestaque}>
-              <Text style={styles.linkAuthDestaque}> Já possui uma conta?</Text>
+            <Text style={styles.linkAuth}>Já possui uma conta?</Text>
+
+            <Link href='/login' asChild>
+              <Text style={styles.linkAuthDestaque}> Faça login</Text>
             </Link>
           </View>
         </View>

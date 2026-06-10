@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
 import { ScrollView, Text, TouchableOpacity, View ,Image } from 'react-native'; // Importa os componentes View e Text do React Native
-import { styles } from './styles.js';
+import { styles } from '../../assets/style/styles.js';
 
 /* Versão Normal
 export default function Index() { // Define e exporta o componente principal da tela
