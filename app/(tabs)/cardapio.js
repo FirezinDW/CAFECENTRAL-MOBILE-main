@@ -1,185 +1,125 @@
 import { Link } from 'expo-router';
 import { useState } from 'react';
-import { FlatList, ScrollView, Text, TextInput, TouchableOpacity, View , Image} from 'react-native';
+import { FlatList, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import produtosJson from '../../assets/data/produtos.json';
 import { styles } from '../../assets/style/styles.js';
+import { TextInput } from 'react-native-web';
 
 export default function Cardapio() {
+  // Cria um objeto JS como se fosse um dicionário para armazenar as imagens
+  const imagensCardapio = {
+    'espresso.png': require('../../assets/images/espresso.png'),
+    'cappuccino_classico.png': require('../../assets/images/cappuccino_classico.png'),
+    'latte_macchiato.png': require('../../assets/images/latte_macchiato.png'),
+    'mocha.png': require('../../assets/images/mocha.png'),
+    'pao_de_queijo_artesanal.png': require('../../assets/images/pao_de_queijo_artesanal.png'),
+    'sanduiche_de_queijo_quente.png': require('../../assets/images/sanduiche_de_queijo_quente.png'),
+    'quiche_lorraine.png': require('../../assets/images/quiche_lorraine.png'),
+    'baguete_recheada.png': require('../../assets/images/baguete_recheada.png'),
+    'croissant_amanteigado.png': require('../../assets/images/croissant_amanteigado.png'),
+    'torta_de_maca_com_sorvete.png': require('../../assets/images/torta_de_maca_com_sorvete.png'),
+    'brownie_de_chocolate_com_nozes.png': require('../../assets/images/brownie_de_chocolate_com_nozes.png'),
+    'bolo_red_velvet.png': require('../../assets/images/bolo_red_velvet.png')
+  };
 
-
-  const produtos = [
+  // Para cada curso em cursosJson:
+  //  Junta tudo de cursos.json + caminho de cada imagem em imagensCursos
+  const produtos = produtosJson.map((produto) =>
+  (
     {
-      id: '1',
-      titulo: 'Espresso',
-      imagem: require('../../assets/images/espresso.png'),
-      url: '/produto1',
-      descricao: 'Um shot concentrado e aromático do nosso blend especial, com crema perfeita. Ideal para os amantes do café puro.',
-      preco: 'R$ 3,00',
-    },
+      ...produto,
+      imagem: imagensCardapio[produto.imagem],
+    }
+  )
+  );
 
-    {
-      id: '2',
-      titulo: 'Cappuccino Clássico',
-      imagem: require('../../assets/images/cappuccino_classico.png'),
-      url: '/produto2',
-      descricao: 'Uma bebida encorpada, com sabor equilibrado, sem chocolate e servida com um toque de canela por cima, oferecendo textura aveludada e aroma intenso.',
-      preco: 'R$ 8,00',
-    },
+  const [busca, setBusca] = useState('');
 
-    {
-      id: '3',
-      titulo: 'Latte Macchiato',
-      imagem: require('../../assets/images/latte_macchiato.png'),
-      url: '/produto3',
-      descricao: 'Leite vaporizado delicadamente manchado com um shot de espresso, criando camadas visíveis e um sabor suave e cremoso.',
-      preco: 'R$ 8,00',
-    },
-
-    {
-      id: '4',
-      titulo: 'Mocha',
-      imagem: require('../../assets/images/mocha.png'),
-      url: '/produto4',
-      descricao: 'Uma deliciosa combinação de espresso, chocolate premium, leite vaporizado e chantilly, para um toque de indulgência.',
-      preco: 'R$ 7,00',
-    },
-
-    {
-      id: '5',
-      titulo: 'Pão de Queijo Artesanal',
-      imagem: require('../../assets/images/pao_de_queijo_artesanal.png'),
-      url: '/produto5',
-      descricao: 'Delicioso pão de queijo artesanal, feito com leite e queijo fresco. O sabor autêntico que encanta todos os paladares.',
-      preco: 'R$ 6,00',
-    },
-
-    {
-      id: '6',
-      titulo: 'Sanduíche de Queijo Quente',
-      imagem: require('../../assets/images/sanduiche_de_queijo_quente.png'),
-      url: '/produto6',
-      descricao: 'Pão de forma tostado com queijo mussarela derretido. Simples e delicioso.',
-      preco: 'R$ 8,00',
-    },
-
-    {
-      id: '7',
-      titulo: 'Quiche Lorraine',
-      imagem: require('../../assets/images/quiche_lorraine.png'),
-      url: '/produto7',
-      descricao: 'Uma torta salgada clássica francesa, com recheio cremoso de bacon e queijo. Servida com uma pequena salada verde.',
-      preco: 'R$ 5,00',
-    },
-
-    {
-      id: '8',
-      titulo: 'Baguete Recheada',
-      imagem: require('../../assets/images/baguete_recheada.png'),
-      url: '/produto8',
-      descricao: 'Baguete crocante recheada com presunto, queijo e tomate fresco. Ideal para um lanche rápido e saboroso.',
-      preco: 'R$ 9,00',
-    },
-
-    {
-      id: '9',
-      titulo: 'Croissant Amanteigado ',
-      imagem: require('../../assets/images/croissant_amanteigado.png'),
-      url: '/produto9',
-      descricao: 'Crocante por fora, macio por dentro, com o sabor inconfundível da manteiga. Perfeito para acompanhar seu café.',
-      preco: 'R$ 7,00',
-    },
-
-    {
-      id: '10',
-      titulo: 'Torta de Maçã com Sorvete',
-      imagem: require('../../assets/images/torta_de_maca_com_sorvete.png'),
-      url: '/produto10',
-      descricao: 'Fatias de maçã caramelizada em uma masa crocante, servida quente com uma bola de sorvete de creme.',
-      preco: 'R$ 8,00',
-    },
-
-    {
-      id: '11',
-      titulo: 'Brownie de Chocolate com Nozes',
-      imagem: require('../../assets/images/brownie_de_chocolate_com_nozes.png'),
-      url: '/produto11',
-      descricao: 'Intenso e úmido, com pedaços crocantes de nozes. Uma explosão de sabor a cada mordida.',
-      preco: 'R$ 7,00',
-    },
-
-    {
-      id: '12',
-      titulo: 'Bolo Red Velvet',
-      imagem: require('../../assets/images/bolo_red_velvet.png'),
-      url: '/produto12',
-      descricao: 'Um clássico americano, com camadas de bolo aveludado de chocolate e um cremoso recheio de cream cheese.',
-      preco: 'R$ 9,00',
-    },
-  ];
+  const produtosFiltrados = produtos.filter(
+    (produto) => {
+      return produto.titulo.toLowerCase().includes(busca.toLocaleLowerCase())
+    })
 
   return (
     <ScrollView>
 
-      {/* HEADER */}
       <View style={styles.header}>
-        <Link href='/'>
-          <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo} />
+        <Link href='/' asChild>
+          <TouchableOpacity>
+            <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo} />
+          </TouchableOpacity>
+        </Link>
+
+        <Link href='/login' asChild>
+          <TouchableOpacity>
+            <Image source={require('../../assets/images/icone_perfil.png')} style={styles.iconeLogin} />
+          </TouchableOpacity>
         </Link>
       </View>
 
       {/* MENU */}
-        <View style={styles.hero}>
-          <View style={styles.heroIndex}>
-            <Link href='/'><TouchableOpacity style={styles.menuItem}>Início</TouchableOpacity></Link>
-            <Link href='/sobre'><TouchableOpacity style={[styles.menuItem , styles.ativo]}>Sobre</TouchableOpacity></Link>
-            <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
-          </View>
+      <View style={styles.hero}>
+        <View style={styles.heroIndex}>
+          <Link href='/' asChild><TouchableOpacity style={styles.menuItem}><Text>Início</Text></TouchableOpacity></Link>
+          <Link href='/sobre' asChild><TouchableOpacity style={styles.menuItem}><Text>Sobre</Text></TouchableOpacity></Link>
+          <Link href='/contato' asChild><TouchableOpacity style={styles.menuItem}><Text>Contato</Text></TouchableOpacity></Link>
         </View>
 
-      {/* CATEGORIAS */}
-      
+        {/* CATEGORIAS */}
+        <View style={styles.categorias}>
+          <Text style={styles.titulo}>Nosso Cardápio</Text>
+          <TextInput placeholder='O que você deseja hoje?' value={busca} onChangeText={setBusca} style={styles.buscaProduto}></TextInput>
+          <View style={styles.teste}>
+            <Link href='/CE' asChild><TouchableOpacity style={styles.btnCategoria}><Text style={styles.textoBtnCategoria}> ☕ Cafés Especiais</Text></TouchableOpacity></Link>
+            <Link href='/DS' asChild><TouchableOpacity style={styles.btnCategoria}><Text style={styles.textoBtnCategoria}> 🍰 Doces e Sobremesas</Text></TouchableOpacity></Link>
+            <Link href='/SL' asChild><TouchableOpacity style={styles.btnCategoria}><Text style={styles.textoBtnCategoria}> 🥖 Salgados e Lanches</Text></TouchableOpacity></Link>
+          </View>
+        </View>
+      </View>
 
+
+      {/* ============================================================================================================ */}
       {/* LISTA */}
       <FlatList
-        data={produtos}
+        data={produtosFiltrados}
         keyExtractor={(item) => item.id}
         scrollEnabled={false}
         renderItem={({ item }) => (
           <View style={styles.cardProduto}>
+            <View style={styles.cardsDetalhes}>
 
-            <Text style={styles.nomeProduto}>
-              {item.Produtotitulo}
-            </Text>
+              <Text style={styles.nomeProduto}>
+                {item.titulo}
+              </Text>
 
-            <Text style={styles.descricaoProduto}>
-              {item.Produtodescricao}
-            </Text>
+              <Image style={styles.imagemProduto} source={item.imagem}></Image>
 
-            <Text style={styles.precoProduto}>
-              R$ {Number(item.Produtopc).toFixed(2)}
-            </Text>
+              <Text style={styles.descricaoProduto}>
+                {item.descricao}
+              </Text>
 
-            <Link
-              href={{
-                pathname: '/detalhes',
-                params: {
-                  Produtotitulo: item.Produtotitulo,
-                  Produtodescricao: item.Produtodescricao,
-                  Produtopc: item.Produtopc
+              <Text style={styles.precoProduto}>
+                {(item.preco)}
+              </Text>
+
+              <Link href={{
+                pathname: '/detalhes', params: {
+                  titulo: item.titulo,
+                  descricao: item.descricao,
+                  preco: item.preco
                 }
-              }}
-              asChild
-            >
-              <TouchableOpacity style={styles.botaoDetalhes}>
-                <Text style={styles.textoBotao}>
-                  Ver detalhes
-                </Text>
-              </TouchableOpacity>
-            </Link>
-
+              }} asChild>
+                <TouchableOpacity style={styles.btnDetalhes}>
+                  <Text style={styles.textoBtnDetalhes}>
+                    Ver detalhes
+                  </Text>
+                </TouchableOpacity>
+              </Link>
+            </View>
           </View>
         )}
       />
-
+      {/* ============================================================================================================ */}
       {/* RODAPÉ */}
       <View style={styles.rodape}>
         <Text style={styles.textoRodape}>

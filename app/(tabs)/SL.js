@@ -1,20 +1,32 @@
 import { Link } from 'expo-router';
-import { ScrollView, Text, View } from 'react-native';
+import { Image, ScrollView, Text, View, TouchableOpacity } from 'react-native';
 import { styles } from '../../assets/style/styles.js';
 
 export default function SL() {
     return (
         <ScrollView>
 
-            {/* TOPO (HEADER) */}
-            <View>
-                <Text>Salgados e Lanches - Café Central</Text>
-                <View>
-                    <Link href='/'><TouchableOpacity style={styles.menuItem}> Início </TouchableOpacity></Link>
-                    <Link href='/sobre'><TouchableOpacity style={styles.menuItem}> Sobre </TouchableOpacity></Link>
-                    <Link href='/cardapio'><TouchableOpacity style={[styles.menuItem, styles.ativo]}> Cardápio </TouchableOpacity></Link>
-                    <Link href='/contato'><TouchableOpacity style={styles.menuItem}> Contato </TouchableOpacity></Link>
-                    <Link href='/login'><TouchableOpacity style={styles.menuItem}>Login</TouchableOpacity></Link>
+            {/* TOPO - HEADER*/}
+            <View style={styles.header}>
+                <Link href='/' asChild>
+                    <TouchableOpacity>
+                        <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo} />
+                    </TouchableOpacity>
+                </Link>
+
+                <Link href='/login' asChild>
+                    <TouchableOpacity>
+                        <Image source={require('../../assets/images/icone_perfil.png')} style={styles.iconeLogin} />
+                    </TouchableOpacity>
+                </Link>
+            </View>
+            {/* ============================================================================================================ */}
+            {/* MENU */}
+            <View style={styles.hero}>
+                <View style={styles.heroIndex}>
+                    <Link href='/' asChild><TouchableOpacity style={{ ...styles.menuItem, ...styles.ativo }}><Text>Início</Text></TouchableOpacity></Link>
+                    <Link href='/sobre' asChild><TouchableOpacity style={styles.menuItem}><Text> Sobre</Text></TouchableOpacity></Link>
+                    <Link href='/contato' asChild><TouchableOpacity style={styles.menuItem}><Text>Contato</Text></TouchableOpacity></Link>
                 </View>
             </View>
 
@@ -22,52 +34,60 @@ export default function SL() {
             {/* CONTEÚDO */}
 
             {/* ITEM 5 */}
-            <View>
-                <Text>🥖 Salgados e Lanches</Text>
-                <View>
-                    <Text>Pão de Queijo Artesanal</Text>
-
-                    <Text>Delicioso pão de queijo artesanal, feito com leite e queijo fresco. O sabor autêntico que encanta todos os paladares.</Text>
-                    <Text>R$ 6,00</Text>
+            <View style={styles.cardProduto}>
+                <Text style={styles.titulo}>🥖 Salgados e Lanches</Text>
+                <View style={styles.cardsDetalhes}>
+                    <Text style={styles.nomeProduto}>Pão de Queijo Artesanal</Text>
+                    <Image source={require('../../assets/images/pao_de_queijo_artesanal.png')} style={styles.imagemProduto} />
+                    <Text style={styles.descricaoProduto}>Delicioso pão de queijo artesanal, feito com leite e queijo fresco. O sabor autêntico que encanta todos os paladares.</Text>
+                    <Text style={styles.precoProduto}>R$ 6,00</Text>
                 </View>
 
                 {/*------------------------------------------------------------------------------------------------------*/}
 
                 {/* ITEM 6 */}
-                <View>
-                    <Text>Sanduíche de Queijo Quente</Text>
-
-                    <Text>Pão de forma tostado com queijo mussarela derretido. Simples e delicioso.
-                    </Text>
-                    <Text>R$ 8,00</Text>
+                <View style={styles.cardsDetalhes}>
+                    <Text style={styles.nomeProduto}>Sanduíche de Queijo Quente</Text>
+                    <Image source={require('../../assets/images/sanduiche_de_queijo_quente.png')} style={styles.imagemProduto} />
+                    <Text style={styles.descricaoProduto}>Pão de forma tostado com queijo mussarela derretido. Simples e delicioso.</Text>
+                    <Text style={styles.precoProduto}>R$ 8,00</Text>
                 </View>
 
                 {/*------------------------------------------------------------------------------------------------------*/}
-                
-                {/* ITEM 7 */}
-                <View>
-                    <Text>Quiche Lorraine</Text>
 
-                    <Text>Uma torta salgada clássica francesa, com recheio cremoso de bacon e queijo. Servida com uma pequena salada verde.</Text>
-                    <Text>R$ 5,00</Text>
+                {/* ITEM 7 */}
+                <View style={styles.cardsDetalhes}>
+                    <Text style={styles.nomeProduto}>Quiche Lorraine</Text>
+                    <Image source={require('../../assets/images/quiche_lorraine.png')} style={styles.imagemProduto} />
+                    <Text style={styles.descricaoProduto}>Uma torta salgada clássica francesa, com recheio cremoso de bacon e queijo. Servida com uma pequena salada verde.</Text>
+                    <Text style={styles.precoProduto}>R$ 5,00</Text>
                 </View>
 
                 {/*------------------------------------------------------------------------------------------------------*/}
 
                 {/* ITEM 8 */}
-                <View>
-                    <Text>Baguete Recheada</Text>
-                    <Text>Baguete crocante recheada com presunto, queijo e tomate fresco. Ideal para um lanche rápido e saboroso.</Text>
-                    <Text>R$ 9,00</Text>
+                <View style={styles.cardsDetalhes}>
+                    <Text style={styles.nomeProduto}>Baguete Recheada</Text>
+                    <Image source={require('../../assets/images/baguete_recheada.png')} style={styles.imagemProduto} />
+                    <Text style={styles.descricaoProduto}>Baguete crocante recheada com presunto, queijo e tomate fresco. Ideal para um lanche rápido e saboroso.</Text>
+                    <Text style={styles.precoProduto}>R$ 9,00</Text>
+                </View>
+
+                <View style={styles.Voltar}>
+                    <Link href="/cardapio">
+                        <TouchableOpacity style={styles.btnVoltar}>
+                            <Text style={styles.textoBtnVoltar}> Voltar ao Cardapio</Text>
+                        </TouchableOpacity>
+                    </Link>
                 </View>
             </View>
-            
+
             {/*------------------------------------------------------------------------------------------------------*/}
             {/* RODAPE */}
             <View style={styles.rodape}>
-                <Text style={styles.textoRodape}> 2026 CafeCentral. Todos os direitos reservados.</Text>
+                <Text style={styles.textoRodape}> © 2026 Café Central. Todos os direitos reservados.</Text>
                 <Link href='/contato'>
-                    <Text style={styles.linkRodape}>Entre em contato</Text>'
+                    <Text style={styles.linkRodape}>Entre em contato</Text>
                 </Link>
             </View>
         </ScrollView>

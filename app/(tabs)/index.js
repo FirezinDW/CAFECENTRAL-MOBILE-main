@@ -7,19 +7,27 @@ export default function Index() {
     <ScrollView  >
       {/* TOPO - HEADER*/}
       <View style={styles.header}>
-        <Link href='/'>
-          <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo} />
+        <Link href='/' asChild>
+          <TouchableOpacity>
+            <Image source={require('../../assets/images/cafecentral.jpg')} style={styles.headerLogo} />
+          </TouchableOpacity>
+        </Link>
+
+        <Link href='/login' asChild>
+          <TouchableOpacity>
+            <Image source={require('../../assets/images/icone_perfil.png')} style={styles.iconeLogin} />
+          </TouchableOpacity>
         </Link>
       </View>
+
       {/* ============================================================================================================ */}
       {/* MENU */}
       <View style={styles.hero}>
         <View style={styles.heroIndex}>
-          <Link href='/'><TouchableOpacity style={[styles.menuItem, styles.ativo]}>Início</TouchableOpacity></Link>
-          <Link href='/sobre'><TouchableOpacity style={styles.menuItem}> Sobre</TouchableOpacity></Link>
-          <Link href='/contato'><TouchableOpacity style={styles.menuItem}>Contato</TouchableOpacity></Link>
+          <Link href='/' asChild><TouchableOpacity style={{ ...styles.menuItem, ...styles.ativo }}><Text>Início</Text></TouchableOpacity></Link>
+          <Link href='/sobre' asChild><TouchableOpacity style={styles.menuItem}><Text> Sobre</Text></TouchableOpacity></Link>
+          <Link href='/contato' asChild><TouchableOpacity style={styles.menuItem}><Text>Contato</Text></TouchableOpacity></Link>
         </View>
-        {/* ============================================================================================================ */}
 
         {/* ============================================================================================================ */}
         {/* Desenvolver Aqui */}
@@ -28,7 +36,6 @@ export default function Index() {
             <Image
               source={require('../../assets/images/cafe_central_interior.jpg')}
               style={styles.imagemCafe}
-              resizeMode="cover"
             />
           </View>
           <Text style={styles.heroTexto1}>Bem vindo ao</Text>
@@ -37,7 +44,7 @@ export default function Index() {
 
         <View style={styles.heroSecundario}>
           <Text style={styles.textoLogin}> Faça login para ter acesso total aos nossos recursos!</Text>
-          <Link href='/login'>
+          <Link href='/login' asChild>
             <TouchableOpacity style={styles.btnAuth}>
               <Text style={styles.textoBtnAuth}>Fazer Login</Text>
             </TouchableOpacity>
@@ -49,10 +56,10 @@ export default function Index() {
       { /* Texto de direitos de autorais */}
       <View style={styles.rodape}>
         { /* Texto de direitos de autorais */}
-        <Text style={styles.textoRodape}> 2026 Café Central. Todos os direitos reservados.</Text>
+        <Text style={styles.textoRodape}> © 2026 Café Central. Todos os direitos reservados.</Text>
 
         { /* Links de Contato */}
-        <Link href='/contato'>
+        <Link href='/contato' asChild>
           <Text style={styles.linkRodape}>Entre em contato</Text>
         </Link>
       </View>

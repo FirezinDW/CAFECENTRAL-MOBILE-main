@@ -11,12 +11,20 @@ export const styles = StyleSheet.create({
     headerLogo: {
         flex: 'flex-grow',
         flexDirection: 'row',
-        justifyContent:'center',
+        justifyContent: 'center',
         alignSelf: 'center',
         backgroundColor: '#e6e2e2',
         width: '100%',
         height: 140,
-        resizeMode: 'contain',
+        resizeMode: "contain",
+    },
+
+    iconeLogin: {
+        alignSelf: 'flex-end',
+        width: '20%',
+        height: 50,
+        resizeMode: "contain",
+        marginBottom: 10
     },
 
     menuItem: {
@@ -50,18 +58,24 @@ export const styles = StyleSheet.create({
     imagemContainer: {
         alignItems: 'center',
         marginBottom: 30,
-      },
-      
-      imagemCafe: {
+    },
+
+    imagemCafe: {
         width: 850,
         height: 550,
         borderRadius: 20,
         width: '90%',
         height: 250,
-        resizeMode: 'contain',
         alignItems: 'center',
         marginTop: 20,
     },
+    //ou
+    /* imagemCafe: {
+        width: '90%',
+        height: 250,
+        borderRadius: 20,
+        alignSelf: 'center',
+    }, */
 
     heroConteudo: {
         padding: 20,
@@ -179,7 +193,6 @@ export const styles = StyleSheet.create({
         color: '#333',
     },
 
-
     input: {
         borderWidth: 1,
         borderColor: '#ccc',
@@ -260,20 +273,57 @@ export const styles = StyleSheet.create({
     },
 
     // =======================================================================================================
-    /* ================= CARDÁPIO ================= */
+    /* ====================== CARDÁPIO | DETALHES ====================== */
+    /* ===================  CE | DS | SL =================== */
     categorias: {
         justifyContent: 'center',
-        flexDirection: 'row',
+        padding: 20,
+        elevation: 5,
+    },
+
+    cardProduto: {
+        padding: 20,
+        backgroundColor: '#745739',
+    },
+
+    cardsDetalhes: {
+        backgroundColor: '#e4ad76',
+        borderColor: '#ffffff',
+        borderRadius: 10,
+        borderWidth: 1,
+        alignItems: 'center',
+        margin: 10
+    },
+
+    buscaProduto: {
+        flexDirection: 'column',
+        textAlign: 'center',
+        marginBottom: 10,
+        backgroundColor: '#dbd5d5',
+        borderRadius: 10,
+        padding: 10
+    },
+
+    etiqueta: {
+        color: '#ffffff',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 24,
+    },
+
+    teste: {
+        justifyContent: 'center',
+        flexDirection: 'column',
         padding: 20,
         elevation: 5,
     },
 
     btnCategoria: {
         color: '#000000',
-        backgroundColor: '#dbd5d5',
-        padding: 15,
-        fontSize: 15,
-        alignSelf: 'center',
+        backgroundColor: '#745739',
+        padding: 6,
+        borderColor: '#ea9f51',
+        borderWidth: 2,
         borderRadius: 8,
         margin: 10,
         textDecorationLine: 'none',
@@ -284,22 +334,59 @@ export const styles = StyleSheet.create({
         elevation: 5,
     },
 
-    // =======================================================================================================
-    /* ================= DETALHES ================= */
+    btnDetalhes: {
+        backgroundColor: '#ffffff',
+        borderRadius: 5,
+        padding: 8,
+        marginBottom: 10,
+    },
 
+    textoBtnCategoria: {
+        fontSize: 14,
+        textAlign: 'center',
+        color: '#ea9f51'
+    },
 
+    nomeProduto: {
+        color: '#ffffff',
+        fontWeight: 'bold',
+        fontSize: 20,
+        padding: 10,
+    },
 
-    /* ================= CE ================= */
+    descricaoProduto: {
+        color: '#ffffff',
+        padding: 15,
+        textAlign: 'center',
+    },
 
+    imagemProduto: {
+        width: 200,
+        height: 200,
+        borderRadius: 15,
+    },
 
+    precoProduto: {
+        color: '#ffffff',
+        fontsize: 10,
+        marginBottom: 15,
+    },
 
-    /* ================= DS ================= */
+    Voltar: {
+        alignItems: 'center',
+    },
 
+    btnVoltar: {
+        backgroundColor: '#ffffff',
+        borderColor: '#ea9f51',
+        borderRadius: 10,
+        borderWidth: 1,
+        padding: 10,
+    },
 
-
-    /* ================= SL ================= */
-
-
+    textoBtnVoltar: {
+        color: '#ea9f51',
+    },
 
     //*================================================================================================================================ */
     //================= RODAPÉ ================= 
