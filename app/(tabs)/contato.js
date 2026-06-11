@@ -27,7 +27,14 @@ export default function Contato() {
             return;
         };
         if (!email.includes('@') || !email.includes('.com')) {
-
+            setMensagemSistema('Digite um e-mail válido!');
+            setTipoMensagem('erro!');
+            return;
+        };
+        if (mensagem.length < 10){
+            setMensagemSistema('Sua mensagem deve conter mais de 10 caracteres!');
+            setTipoMensagem('erro!');
+            return;
         };
         if (mensagem == '') {
             setMensagemSistema('Digite sua mensagem!');
